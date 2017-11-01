@@ -23,3 +23,17 @@ Assign the distance value as 0 for the source vertex so that it is picked first.
     b) . 把U加入到SPTSet集合中
     C) . 更新所有与U相邻的点的距离值。首先要先遍历所有相邻点，对于每一个相邻点V，如果权重值V的距离值大于权重值U+U-V边的权重，那么更新V的距离值。
 
+
+The second algorithm is Prim Minimum Spanning tree algorithm
+A spanning tree means all vertices must be connected.
+So the two disjoint subsets of vertices must be connected to make a spanning tree.
+They must be connected with the minimum weight edge to make it a minimum spanning tree.
+
+1). Create a set mstSet that keeps track of vertices already included in MST
+2). Assign a key value to all vertices in the input graph. Initialize all key values as INFINITE.
+Assign key value as 0 for the first vertex so that it is picked first.
+3). While mstSet doesn't include all vertices
+    a). Pick a vertex u which is not there in mstSet and has minimum key value.
+    b). Include u to mstSet.
+    c). Update key value of all adjacent vertices of u. To update the key values, iterate through all adjacent vertices.
+        For every adjacent vertex v, if weight of edge u-v is less than the previous key value of v, update the key value as weight of u-v.
